@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fas fa-utensils"></i>
+        Foodie
+    </div>
+
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('restaurants')">Restaurants</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('orders')">My Orders</a>
+
+        <a href="#" class="cart-link" onclick="showSection('cart')">
+            <i class="fas fa-shopping-cart"></i>
+            Cart
+            <span id="cartCount">0</span>
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+<section id="home" class="section active">
+
+    <!-- HERO -->
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>Delicious food,<br>
+                <span>delivered to you.</span>
+            </h1>
+
+            <p>
+                Discover the best restaurants and delicious meals
+                around you. Order your favourite food with Foodie.
+            </p>
+
+            <button onclick="showSection('restaurants')">
+                Order Now <i class="fas fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                 alt="Delicious Food">
+        </div>
+
+    </div>
+
+
+    <!-- POPULAR RESTAURANTS -->
+    <div class="container">
+
+        <h2>Popular Restaurants</h2>
+
+        <p class="subtitle">
+            Choose from the best restaurants near you
+        </p>
+
+        <div class="restaurant-container">
+
+            <div class="restaurant-card">
+
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80"
+                     alt="Burger">
+
+                <div class="card-content">
+
+                    <h3>Spice Hub</h3>
+
+                    <p>Indian • Biryani • Chinese</p>
+
+                    <div class="rating">
+                        ⭐ 4.8
+                    </div>
+
+                    <button onclick="openRestaurant('Spice Hub')">
+                        View Menu
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="restaurant-card">
+
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80"
+                     alt="Pizza">
+
+                <div class="card-content">
+
+                    <h3>Pizza Palace</h3>
+
+                    <p>Pizza • Italian • Fast Food</p>
+
+                    <div class="rating">
+                        ⭐ 4.6
+                    </div>
+
+                    <button onclick="openRestaurant('Pizza Palace')">
+                        View Menu
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="restaurant-card">
+
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                     alt="Burger">
+
+                <div class="card-content">
+
+                    <h3>Burger House</h3>
+
+                    <p>Burgers • Fries • Fast Food</p>
+
+                    <div class="rating">
+                        ⭐ 4.5
+                    </div>
+
+                    <button onclick="openRestaurant('Burger House')">
+                        View Menu
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESTAURANTS -->
+<section id="restaurants" class="section">
+
+    <div class="page-header">
+
+        <h1>Select a Restaurant</h1>
+
+        <p>
+            Choose your favourite restaurant and order delicious food.
+        </p>
+
+    </div>
+
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Classic Chicken Burger</h3>
+
+            <p>Juicy chicken burger with fresh vegetables.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹149</strong>
+
+                <button onclick="addToCart('Classic Chicken Burger',149)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Margherita Pizza</h3>
+
+            <p>Fresh cheese pizza with tomato and herbs.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹249</strong>
+
+                <button onclick="addToCart('Margherita Pizza',249)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Chicken Biryani</h3>
+
+            <p>Authentic aromatic chicken biryani.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹199</strong>
+
+                <button onclick="addToCart('Chicken Biryani',199)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Paneer Tikka</h3>
+
+            <p>Soft paneer grilled with Indian spices.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹179</strong>
+
+                <button onclick="addToCart('Paneer Tikka',179)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Veggie Pizza</h3>
+
+            <p>Loaded with fresh vegetables and cheese.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹229</strong>
+
+                <button onclick="addToCart('Veggie Pizza',229)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Masala Noodles</h3>
+
+            <p>Spicy and delicious vegetable noodles.</p>
+
+            <div class="food-bottom">
+
+                <strong>₹129</strong>
+
+                <button onclick="addToCart('Masala Noodles',129)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CART -->
+<section id="cart" class="section">
+
+    <div class="page-header">
+
+        <h1><i class="fas fa-shopping-cart"></i> Your Cart</h1>
+
+        <p>Review your items before placing your order.</p>
+
+    </div>
+
+    <div class="cart-box">
+
+        <div id="cartItems">
+
+            <p class="empty">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+        <div class="cart-total">
+
+            <h2>Total: ₹<span id="cartTotal">0</span></h2>
+
+            <button onclick="placeOrder()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDERS -->
+<section id="orders" class="section">
+
+    <div class="page-header">
+
+        <h1>
+            <i class="fas fa-box"></i>
+            My Orders
+        </h1>
+
+        <p>Track your previous food orders.</p>
+
+    </div>
+
+    <div id="orderList">
+
+        <p class="empty">
+            No orders placed yet.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+    <div class="about-box">
+
+        <h1>About Foodie</h1>
+
+        <p>
+            Foodie is a simple food delivery website that helps users
+            discover restaurants and order their favourite food online.
+        </p>
+
+        <div class="features">
+
+            <div>
+                <i class="fas fa-utensils"></i>
+                <h3>Great Food</h3>
+                <p>Delicious meals from popular restaurants.</p>
+            </div>
+
+            <div>
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Get your food delivered quickly.</p>
+            </div>
+
+            <div>
+                <i class="fas fa-heart"></i>
+                <h3>Easy Ordering</h3>
+                <p>Simple and convenient food ordering.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Foodie Food Delivery
+    </p>
+
+    <p>
+        Designed by <strong>Sathya Priya Raj Kumar</strong>
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
